@@ -27,7 +27,14 @@ centroids = zeros(K, n);
 %
 
 
+for k = 1:K
+   
+    % I used logical arrays here for indexing to make the code run faster
+    indexes = idx == k;
+    
+    centroids(k, :) = mean(X(indexes, :));
 
+end;
 
 
 
